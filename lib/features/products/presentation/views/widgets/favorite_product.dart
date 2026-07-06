@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_second_task/core/utils/app_sizes.dart';
 
 class FavoriteProduct extends StatefulWidget {
   const FavoriteProduct({super.key});
@@ -20,15 +21,15 @@ class _FavoriteProductState extends State<FavoriteProduct> {
         });
       },
       child: Container(
-        width: 30,
-        height: 30,
+        width: AppSizes.s30,
+        height: AppSizes.s30,
         decoration: const BoxDecoration(
           color: Color(0xffA3A2A2),
           shape: BoxShape.circle,
         ),
         child: Icon(
           isFavorite ? Icons.favorite : Icons.favorite_border,
-          size: 14.sp,
+          size: AppSizes.icon14.sp,
           color: isFavorite ? Color(0xffFF383C) : Colors.white,
         ),
       ),

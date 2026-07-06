@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_second_task/core/utils/app_radius.dart';
 
 import 'product_name_and_category.dart';
 import 'product_price_and_rating.dart';
@@ -10,7 +10,7 @@ class ProductCardDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.all(10.r),
+      padding: EdgeInsets.all(AppRadius.s10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_second_task/core/utils/colors.dart';
+import 'package:flutter_second_task/core/utils/app_sizes.dart';
+import 'package:flutter_second_task/core/utils/app_text_styles.dart';
 
 class ProductPriceAndRating extends StatelessWidget {
   const ProductPriceAndRating({super.key});
@@ -12,23 +13,15 @@ class ProductPriceAndRating extends StatelessWidget {
       children: [
         Text(
           r'$1,999',
-          style: TextStyle(
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w700,
-            color: kprimaryColor,
-          ),
+          style: AppTextStyles.s14w700,
         ),
         Row(
           children: [
-            Icon(Icons.star_rounded, color: Color(0xFFFCD53F), size: 16.sp),
-            SizedBox(width: 4.w),
+            Icon(Icons.star_rounded, color: Color(0xFFFCD53F), size: AppSizes.icon16.sp),
+            SizedBox(width: AppSizes.s4.w),
             Text(
               '4.5 (9)',
-              style: TextStyle(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w400,
-                color: ktextColor,
-              ),
+              style: AppTextStyles.s12w400,
             ),
           ],
         ),

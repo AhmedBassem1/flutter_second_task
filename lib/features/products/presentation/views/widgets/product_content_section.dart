@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_second_task/core/utils/app_sizes.dart';
 
 import 'product_category.dart';
 import 'product_title_and_price.dart';
@@ -14,9 +14,9 @@ class ProductContentSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ProductCategory(),
-        SizedBox(height: 12.h),
+        SizedBox(height: AppSizes.s12h),
         ProductTitleAndPrice(),
-        SizedBox(height: 32.h),
+        SizedBox(height: AppSizes.s32h),
         ProductDetails(),
       ],
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_second_task/core/utils/app_radius.dart';
 import 'package:flutter_second_task/core/utils/colors.dart';
 
 import 'favorite_product.dart';
@@ -20,15 +20,14 @@ class ProductCardImage extends StatelessWidget {
               ),
               color: ktextColor2,
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(16.r),
-                topRight: Radius.circular(16.r),
+                topLeft: Radius.circular(AppRadius.r16),
+                topRight: Radius.circular(AppRadius.r16),
               ),
             ),
           ),
         ),
-        Positioned(top: 10, left: 10, child: FavoriteProduct()),
+        Positioned(top: 10, left: 10, child: const FavoriteProduct()),
       ],
     );
   }
 }
-

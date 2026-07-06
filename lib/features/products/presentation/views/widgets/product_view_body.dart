@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_second_task/core/utils/app_sizes.dart';
 
 import 'product_card.dart';
 
@@ -9,19 +10,19 @@ class ProductViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 16.w),
+      padding: EdgeInsets.symmetric(horizontal: AppSizes.padding16),
       child: GridView.builder(
-        gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 16.w,
-          mainAxisSpacing: 16.h,
-          mainAxisExtent: 300.h,
-        ),
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return const ProductCard();
-        },
-      ),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 16.w,
+                mainAxisSpacing: 16.h,
+                mainAxisExtent: 300.h,
+              ),
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return const ProductCard();
+              },
+            ),
     );
   }
 }
