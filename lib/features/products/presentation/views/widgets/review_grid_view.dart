@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'review_card.dart';
 
@@ -10,11 +11,11 @@ class ReviewGridView extends StatelessWidget {
     return GridView.builder(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: 12,
-        mainAxisSpacing: 16,
-        mainAxisExtent: 129,
+        crossAxisSpacing: 12.w,
+        mainAxisSpacing: 16.h,
+        mainAxisExtent: 180.h,
       ),
       itemCount: 4,
       itemBuilder: (context, index) {

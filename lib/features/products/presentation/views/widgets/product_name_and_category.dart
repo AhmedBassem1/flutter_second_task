@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_second_task/core/utils/colors.dart';
 
 class ProductNameAndCategory extends StatelessWidget {
@@ -12,7 +13,7 @@ class ProductNameAndCategory extends StatelessWidget {
         Text(
           'Laptops',
           style: TextStyle(
-            fontSize: 12,
+            fontSize: 12.sp,
             fontWeight: FontWeight.w400,
             color: ktextColor,
           ),
@@ -20,7 +21,7 @@ class ProductNameAndCategory extends StatelessWidget {
         Text(
           'MacBook Pro 14',
           style: TextStyle(
-            fontSize: 14,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: kprimaryColor,
           ),

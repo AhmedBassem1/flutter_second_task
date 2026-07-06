@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_second_task/core/utils/colors.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ReviewCardContent extends StatelessWidget {
   const ReviewCardContent({super.key});
@@ -8,7 +9,7 @@ class ReviewCardContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: EdgeInsets.all(12.0.r),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -23,31 +24,31 @@ class ReviewCardContent extends StatelessWidget {
                   height: 24,
                 ),
               ),
-              SizedBox(width: 8),
+              SizedBox(width: 8.w),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Omar Ali',
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
                       color: kprimaryColor,
                     ),
                   ),
-                  SizedBox(height: 2),
+                  SizedBox(height: 2.h),
                   Row(
                     children: [
                       Icon(
                         Icons.star_rounded,
                         color: Color(0xFFFCD53F),
-                        size: 12,
+                        size: 12.sp,
                       ),
-                      SizedBox(width: 2),
+                      SizedBox(width: 2.w),
                       Text(
                         '4.5',
                         style: TextStyle(
-                          fontSize: 10,
+                          fontSize: 10.sp,
                           fontWeight: FontWeight.w500,
                           color: ktextColor2,
                         ),
@@ -58,11 +59,12 @@ class ReviewCardContent extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 8),
+          SizedBox(height: 8.h),
           Text(
             'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            maxLines: 3,
             style: TextStyle(
-              fontSize: 12,
+              fontSize: 12.sp,
               fontWeight: FontWeight.w400,
               color: kprimaryColor,
             ),

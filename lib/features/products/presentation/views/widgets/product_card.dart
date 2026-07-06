@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_second_task/core/utils/colors.dart';
 
 import '../product_details_view.dart';
@@ -21,8 +22,8 @@ class ProductCard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: kbackgroundColor,
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: ksborderColor, width: 1),
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: ksborderColor, width: 1.w),
         ),
         child: ProductCardContent(),
       ),

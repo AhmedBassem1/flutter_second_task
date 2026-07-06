@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_second_task/core/utils/colors.dart';
 
 class ProductsImages extends StatelessWidget {
@@ -14,7 +15,7 @@ class ProductsImages extends StatelessWidget {
           fit: BoxFit.cover,
         ),
         color: ktextColor2,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.r),
       ),
     );
   }

@@ -20,10 +20,10 @@ class ProductPriceAndRating extends StatelessWidget {
         ),
         Row(
           children: [
-            Icon(Icons.star_rounded, color: Color(0xFFFCD53F), size: 16),
-            SizedBox(width: 4),
+            Icon(Icons.star_rounded, color: Color(0xFFFCD53F), size: 16.sp),
+            SizedBox(width: 4.w),
             Text(
-              '4.5 (200)',
+              '4.5 (9)',
               style: TextStyle(
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w400,

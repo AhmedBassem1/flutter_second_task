@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'custom_dot_indicator.dart';
 
@@ -13,7 +14,7 @@ class DotsIndicator extends StatelessWidget {
       children: List.generate(
         3,
         (index) => Padding(
-          padding: const EdgeInsets.only(right: 6),
+          padding: EdgeInsets.only(right: 6.w),
           child: CustomDotIndicator(isActive: index == currentPageIndex),
         ),
       ),

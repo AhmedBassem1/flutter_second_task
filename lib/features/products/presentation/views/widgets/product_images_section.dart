@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'product_images_page_view.dart';
 import 'dots_indicator.dart';
@@ -35,7 +36,7 @@ class _ProductImagesSectionState extends State<ProductImagesSection> {
     return Column(
       children: [
         ProductImagesPageView(pageController: pageController),
-        SizedBox(height: 18),
+        SizedBox(height: 18.h),
         Center(child: DotsIndicator(currentPageIndex: currentPageIndex)),
       ],
     );

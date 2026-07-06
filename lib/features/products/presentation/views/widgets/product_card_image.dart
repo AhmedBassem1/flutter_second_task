@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_second_task/core/utils/colors.dart';
+
+import 'favorite_product.dart';
 
 class ProductCardImage extends StatelessWidget {
   const ProductCardImage({super.key});
@@ -16,31 +19,16 @@ class ProductCardImage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               color: ktextColor2,
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(16),
-                topRight: Radius.circular(16),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(16.r),
+                topRight: Radius.circular(16.r),
               ),
             ),
           ),
         ),
-        Positioned(
-          top: 10,
-          left: 10,
-          child: Container(
-            width: 30,
-            height: 30,
-            decoration: const BoxDecoration(
-              color: Color(0xffA3A2A2),
-              shape: BoxShape.circle,
-            ),
-            child: const Icon(
-              Icons.favorite_border,
-              size: 14,
-              color: Colors.white,
-            ),
-          ),
-        ),
+        Positioned(top: 10, left: 10, child: FavoriteProduct()),
       ],
     );
   }
 }
+
