@@ -10,16 +10,18 @@ class ProductModel {
   final double rating;
   final List<ReviewModel> reviews;
 
-  ProductModel(
- {
+  bool isFavorite;
+
+  ProductModel({
     required this.id,
     required this.title,
     required this.description,
     required this.category,
     required this.price,
     required this.rating,
-    required this.reviews, 
+    required this.reviews,
     required this.images,
+    this.isFavorite = false,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {

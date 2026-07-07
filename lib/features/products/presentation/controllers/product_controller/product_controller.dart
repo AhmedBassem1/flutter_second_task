@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_second_task/features/products/data/models/product_models/product_model.dart';
 
 import '../../../data/repo/Product_repo.dart';
 import 'product_state.dart';
@@ -24,4 +25,15 @@ class ProductController extends Cubit<ProductState> {
       ),
     );
   }
+
+
+  Future<void> toggleFavorite(ProductModel product) async {
+  final newFavoriteStatus  = await productRepo.toggleFavorite(product.id);
+
+  product.isFavorite = newFavoriteStatus ;
+
+  emit(state.copyWith(
+    products: List<ProductModel>.from(state.products),
+  ));
+}
 }

@@ -27,7 +27,7 @@ class ProductCardImage extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(top: AppSizes.s10, left: AppSizes.s10, child: const FavoriteProduct()),
+        Positioned(top: AppSizes.s10, left: AppSizes.s10, child:  FavoriteProduct(productModel: productModel,)),
       ],
     );
   }

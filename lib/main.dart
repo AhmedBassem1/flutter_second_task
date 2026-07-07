@@ -7,13 +7,21 @@ import 'package:flutter_second_task/core/routes/app_routs.dart';
 import 'package:flutter_second_task/core/utils/api_service.dart';
 import 'package:flutter_second_task/core/utils/app_constants.dart';
 import 'package:flutter_second_task/core/utils/app_strings.dart';
+import 'package:flutter_second_task/features/products/data/data_sources/local/favorite_local_data_source.dart';
 import 'package:flutter_second_task/features/products/data/repo/Product_repo_impl.dart';
 import 'package:flutter_second_task/features/products/presentation/controllers/product_controller/product_controller.dart';
 import 'package:flutter_second_task/features/products/presentation/views/product_details_view.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import 'features/products/presentation/views/products_view.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Hive.initFlutter();
+  await Hive.openBox('favorites');
+  final box = Hive.box('favorites');
+  print('Keys after open: ${box.keys.toList()}');
   runApp(
     DevicePreview(
       enabled: true, // Set to false to disable Device Preview
@@ -35,9 +43,10 @@ class MyApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
-          create: (context) =>
-              ProductController(ProductRepoImpl(ApiService(Dio())))..getProducts(),
-        ),
+            create: (context) => ProductController(
+              ProductRepoImpl(ApiService(Dio()), FavoriteLocalDataSource()),
+            )..getProducts(),
+          ),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -48,7 +57,8 @@ class MyApp extends StatelessWidget {
           initialRoute: AppRoutes.productsView,
           routes: {
             AppRoutes.productsView: (context) => const ProductsView(),
-            AppRoutes.productDetailsView: (context) => const ProductDetailsView(),
+            AppRoutes.productDetailsView: (context) =>
+                const ProductDetailsView(),
           },
         ),
       ),

@@ -3,14 +3,8 @@ import 'package:flutter_second_task/features/products/data/models/product_models
 
 import '../../../../core/error/failure.dart';
 
-
 abstract class ProductsRepo {
+  Future<Either<Failure, List<ProductModel>>> getProducts();
 
- Future< Either<Failure,List<ProductModel>> > getProducts();
-
- Future<void> addToFavorites();
-
- Future<void> removeFromFavorites(int id);
- 
- Future<bool> isFavorite(int id);
- }
+  Future<bool> toggleFavorite(int id);
+}
