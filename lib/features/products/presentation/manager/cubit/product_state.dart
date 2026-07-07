@@ -1,5 +1,5 @@
 
-import 'package:flutter_second_task/features/products/data/models/product_models/product_model/product.dart';
+import 'package:flutter_second_task/features/products/data/models/product_models/product_model.dart';
 
 abstract class ProductState {}
 class ProductInitialState extends ProductState {}
@@ -9,6 +9,6 @@ class ProductFailureState extends ProductState {
   ProductFailureState(this.errorMessage);
 }
 class ProductSuccessState extends ProductState {
-  final List<Product> products;
+  final List<ProductModel> products;
   ProductSuccessState(this.products);
 }

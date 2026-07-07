@@ -2,8 +2,8 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_second_task/core/error/failure.dart';
 import 'package:flutter_second_task/core/utils/api_service.dart';
+import 'package:flutter_second_task/features/products/data/models/product_models/product_model.dart';
 
-import '../models/product_models/product_model/product.dart';
 import 'Product_repo.dart';
 
 class ProductRepoImpl implements ProductsRepo {
@@ -11,12 +11,12 @@ class ProductRepoImpl implements ProductsRepo {
   ProductRepoImpl(this.apiService);
 
   @override
-  Future<Either<Failure, List<Product>>> getProducts() async {
+  Future<Either<Failure, List<ProductModel>>> getProducts() async {
     try {
       final response = await apiService.get(endPoint: 'products');
 
     final products = (response['products'] as List)
-        .map((e) => Product.fromJson(e))
+        .map((e) => ProductModel.fromJson(e))
         .toList();
       return Right(products);
     } catch (e) {
