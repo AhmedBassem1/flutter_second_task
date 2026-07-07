@@ -8,7 +8,7 @@ import 'package:flutter_second_task/core/utils/api_service.dart';
 import 'package:flutter_second_task/core/utils/app_constants.dart';
 import 'package:flutter_second_task/core/utils/app_strings.dart';
 import 'package:flutter_second_task/features/products/data/repo/Product_repo_impl.dart';
-import 'package:flutter_second_task/features/products/presentation/manager/cubit/product_cubit.dart';
+import 'package:flutter_second_task/features/products/presentation/controllers/product_controller/product_controller.dart';
 import 'package:flutter_second_task/features/products/presentation/views/product_details_view.dart';
 
 import 'features/products/presentation/views/products_view.dart';
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider(
           create: (context) =>
-              ProductCubit(ProductRepoImpl(ApiService(Dio())))..getProducts(),
+              ProductController(ProductRepoImpl(ApiService(Dio())))..getProducts(),
         ),
         ],
         child: MaterialApp(

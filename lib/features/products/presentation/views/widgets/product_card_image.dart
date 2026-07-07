@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_second_task/core/utils/app_radius.dart';
-import 'package:flutter_second_task/core/utils/colors.dart';
+import 'package:flutter_second_task/core/utils/app_sizes.dart';
+import 'package:flutter_second_task/features/products/data/models/product_models/product_model.dart';
 
 import 'favorite_product.dart';
 
 class ProductCardImage extends StatelessWidget {
-  const ProductCardImage({super.key});
-
+  const ProductCardImage({super.key, required this.productModel});
+  final ProductModel productModel;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -14,11 +15,11 @@ class ProductCardImage extends StatelessWidget {
         Positioned(
           child: Container(
             decoration: BoxDecoration(
-              image: const DecorationImage(
-                image: AssetImage('assets/images/assets_tast.jpg'),
+              image: DecorationImage(
+                image: NetworkImage(productModel.images),
                 fit: BoxFit.cover,
               ),
-              color: ktextColor2,
+              color: Colors.transparent,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(AppRadius.r16),
                 topRight: Radius.circular(AppRadius.r16),
@@ -26,7 +27,7 @@ class ProductCardImage extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(top: 10, left: 10, child: const FavoriteProduct()),
+        Positioned(top: AppSizes.s10, left: AppSizes.s10, child: const FavoriteProduct()),
       ],
     );
   }

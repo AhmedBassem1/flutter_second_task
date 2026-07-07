@@ -12,6 +12,7 @@ abstract class AppSizes {
   static double s8w = 8.w;
   static double s7h = 7.h;
   static double s7w = 7.w;
+  static double s10 = 10;
   static double s16w = 16.w;
   static double s16h = 16.h;
   static double s24 = 24;

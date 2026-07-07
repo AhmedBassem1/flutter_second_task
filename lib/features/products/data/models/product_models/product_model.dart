@@ -5,18 +5,21 @@ class ProductModel {
   final String title;
   final String description;
   final String category;
+  final String images;
   final double price;
   final double rating;
   final List<ReviewModel> reviews;
 
-  ProductModel({
+  ProductModel(
+ {
     required this.id,
     required this.title,
     required this.description,
     required this.category,
     required this.price,
     required this.rating,
-    required this.reviews,
+    required this.reviews, 
+    required this.images,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
@@ -25,6 +28,7 @@ class ProductModel {
       title: json['title'],
       description: json['description'],
       category: json['category'],
+      images: json['images'][0],
       price: (json['price'] as num).toDouble(),
       rating: (json['rating'] as num).toDouble(),
       reviews: (json['reviews'] as List)

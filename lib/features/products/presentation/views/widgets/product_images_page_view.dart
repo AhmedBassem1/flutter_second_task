@@ -1,11 +1,13 @@
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_second_task/features/products/data/models/product_models/product_model.dart';
 
 import 'products_images.dart';
 
 class ProductImagesPageView extends StatelessWidget {
-  const ProductImagesPageView({super.key, required this.pageController});
+  const ProductImagesPageView({super.key, required this.pageController, required this.productModel});
 
+  final ProductModel productModel;
   final PageController pageController;
 
   @override
@@ -13,7 +15,7 @@ class ProductImagesPageView extends StatelessWidget {
     return ExpandablePageView(
       controller: pageController,
       scrollDirection: Axis.horizontal,
-      children: List.generate(3, (index) => ProductsImages()),
+      children: List.generate(3, (index) => ProductsImages(productModel: productModel ,)),
     );
   }
 }

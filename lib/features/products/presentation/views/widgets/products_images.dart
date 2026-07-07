@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_second_task/core/utils/colors.dart';
+import 'package:flutter_second_task/features/products/data/models/product_models/product_model.dart';
 
 class ProductsImages extends StatelessWidget {
-  const ProductsImages({super.key});
-
+  const ProductsImages({super.key, required this.productModel});
+  final ProductModel productModel;
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 305,
       decoration: BoxDecoration(
-        image: const DecorationImage(
-          image: AssetImage('assets/images/assets_tast.jpg'),
+        image:  DecorationImage(
+          image: NetworkImage(productModel.images),
           fit: BoxFit.cover,
         ),
-        color: ktextColor2,
+        color: Colors.transparent,
         borderRadius: BorderRadius.circular(16.r),
       ),
     );

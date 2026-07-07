@@ -3,9 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_second_task/core/utils/app_sizes.dart';
 import 'package:flutter_second_task/core/utils/app_text_styles.dart';
 import 'package:flutter_second_task/core/utils/colors.dart';
+import 'package:flutter_second_task/features/products/data/models/product_models/product_model.dart';
 
 class ProductReviewsHeader extends StatelessWidget {
-  const ProductReviewsHeader({super.key});
+  const ProductReviewsHeader({super.key, required this.productModel});
+final ProductModel productModel;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class ProductReviewsHeader extends StatelessWidget {
                 Icon(Icons.star_rounded, color: kstarIconColor, size: AppSizes.icon16.sp),
                 SizedBox(width: AppSizes.s4w),
                 Text(
-                  '4.5',
+                  "${productModel.rating}",
                   style: AppTextStyles.s18w500,
                 ),
               ],
@@ -33,7 +35,7 @@ class ProductReviewsHeader extends StatelessWidget {
         ),
         SizedBox(height: AppSizes.s4h),
         Text(
-          '1,543',
+          '${productModel.reviews.length}',
           style: AppTextStyles.s14w400,
         ),
       ],
