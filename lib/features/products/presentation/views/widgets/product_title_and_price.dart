@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_second_task/core/utils/colors.dart';
+import 'package:flutter_second_task/core/utils/app_text_styles.dart';
 
 class ProductTitleAndPrice extends StatelessWidget {
   const ProductTitleAndPrice({super.key});
@@ -12,19 +11,11 @@ class ProductTitleAndPrice extends StatelessWidget {
       children: [
         Text(
           'Huawei Watch D2',
-          style: TextStyle(
-            fontSize: 20.sp,
-            fontWeight: FontWeight.w600,
-            color: kprimaryColor,
-          ),
+          style: AppTextStyles.s20w600,
         ),
         Text(
           '\$299',
-          style: TextStyle(
-            fontSize: 20.sp,
-            fontWeight: FontWeight.w600,
-            color: kprimaryColor,
-          ),
+          style: AppTextStyles.s20w600,
         ),
       ],
     );

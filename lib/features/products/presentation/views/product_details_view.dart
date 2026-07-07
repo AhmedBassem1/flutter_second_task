@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_second_task/core/utils/app_radius.dart';
 import 'package:flutter_second_task/core/utils/app_sizes.dart';
 import 'package:flutter_second_task/features/products/presentation/views/widgets/product_details_share_icon.dart';

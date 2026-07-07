@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_second_task/core/utils/colors.dart';
+import 'package:flutter_second_task/core/utils/app_text_styles.dart';
 
 class ProductCategory extends StatelessWidget {
   const ProductCategory({super.key});
@@ -9,11 +8,7 @@ class ProductCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       'Accessories',
-      style: TextStyle(
-        fontSize: 15.sp,
-        fontWeight: FontWeight.w500,
-        color: ktextColor2,
-      ),
+      style: AppTextStyles.s15w500,
     );
   }
 }
