@@ -1,15 +1,12 @@
 import 'package:device_preview/device_preview.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_second_task/core/routes/app_routs.dart';
-import 'package:flutter_second_task/core/utils/api_service.dart';
 import 'package:flutter_second_task/core/utils/app_constants.dart';
 import 'package:flutter_second_task/core/utils/app_strings.dart';
 import 'package:flutter_second_task/core/utils/constants.dart';
-import 'package:flutter_second_task/features/products/data/data_sources/local/favorite_local_data_source.dart';
-import 'package:flutter_second_task/features/products/data/repo/Product_repo_impl.dart';
+import 'package:flutter_second_task/core/utils/service_locator.dart';
 import 'package:flutter_second_task/features/products/presentation/controllers/product_controller/product_controller.dart';
 import 'package:flutter_second_task/features/products/presentation/views/product_details_view.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -21,6 +18,9 @@ void main() async {
 
   await Hive.initFlutter();
   await Hive.openBox(HiveBoxes.favorites);
+
+    setupLocator();
+
   runApp(
     DevicePreview(
       enabled: true, // Set to false to disable Device Preview
@@ -42,9 +42,7 @@ class MyApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) => ProductController(
-              ProductRepoImpl(ApiService(Dio()), FavoriteLocalDataSource()),
-            )..getProducts(),
+            create: (context) =>  getIt<ProductController>()..getProducts(),
           ),
         ],
         child: MaterialApp(
