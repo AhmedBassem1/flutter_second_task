@@ -1,7 +1,8 @@
+import 'package:flutter_second_task/core/utils/constants.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class FavoriteLocalDataSource {
-  static const String boxName = 'favorites';
+  static const String boxName = HiveBoxes.favorites;
 
   Future<bool> toggleFavorite(int id) async {
     final box = Hive.box(boxName);

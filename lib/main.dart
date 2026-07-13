@@ -7,6 +7,7 @@ import 'package:flutter_second_task/core/routes/app_routs.dart';
 import 'package:flutter_second_task/core/utils/api_service.dart';
 import 'package:flutter_second_task/core/utils/app_constants.dart';
 import 'package:flutter_second_task/core/utils/app_strings.dart';
+import 'package:flutter_second_task/core/utils/constants.dart';
 import 'package:flutter_second_task/features/products/data/data_sources/local/favorite_local_data_source.dart';
 import 'package:flutter_second_task/features/products/data/repo/Product_repo_impl.dart';
 import 'package:flutter_second_task/features/products/presentation/controllers/product_controller/product_controller.dart';
@@ -19,9 +20,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Hive.initFlutter();
-  await Hive.openBox('favorites');
-  final box = Hive.box('favorites');
-  print('Keys after open: ${box.keys.toList()}');
+  await Hive.openBox(HiveBoxes.favorites);
   runApp(
     DevicePreview(
       enabled: true, // Set to false to disable Device Preview
